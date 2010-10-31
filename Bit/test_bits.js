@@ -115,3 +115,10 @@ test("It should set negative numbers to zero", function(){
   SetUpBase8();
   b.Set(-9);
   equals(b.value, 0, "Negative numbrs to zero")});
+
+test("It should set to zero if subtracting more than its value but less than base value.", function(){
+  SetUpBase8();
+  b.value = 1;
+  b.Subtract(2);
+  equals(b.value, 0, "by definition");
+});
