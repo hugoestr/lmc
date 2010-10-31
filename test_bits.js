@@ -28,3 +28,10 @@ test("It should transforms greater values than its base and add the correct bit"
   b.Add(2);
   equal(b.value, 0 , "Value should be 0 because 00 & 10 return 10, with this value being 0" );
 });
+
+test("It should substract a value", function(){
+  SetUp();
+  b.value = 1;
+  b.Subtract(1);
+  equal(b.value, 0 , "Value should be 0");
+});
