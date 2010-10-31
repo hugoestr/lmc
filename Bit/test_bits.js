@@ -99,3 +99,14 @@ test("It should set a value", function(){
   b.Set(5);
   equals(b.value, 5, "Should be 5");
 });
+
+test("It should add correctly when the value is greater than base", function(){
+  SetUpBase8();
+  b.Set(9);
+  equals(b.value, 1, "9 should give 11 in base 8, so bit value should be 1");
+});
+
+test("It should put reminder value if being set to a number greater than base", function(){
+  SetUpBase8();
+  b.Set(9);
+  equals(b.carry, 1, "9 should give 11 in base 8, so the carry should be 1")});
