@@ -63,7 +63,7 @@ test("It should set carry for subtraction if value exceeds base", function(){
   equals(b.carry, 1, "01 minus 10 would give us 11");
 });
 
-module("Bit, base 10");
+module("Bit, base 8");
 
 function SetUpBase8()
 {
@@ -79,4 +79,17 @@ test("It should add in base 8", function(){
   SetUpBase8();
   b.Add(7);
   equals(b.value, 7, "Adding 7 in base 8");
+});
+
+test("It should add in base 8", function(){
+  SetUpBase8();
+  b.Add(7);
+  equals(b.value, 7, "Adding 7 in base 8");
+});
+
+test("It should substract in base 8", function(){
+  SetUpBase8();
+  b.value = 7;
+  b.Subtract(4);
+  equals(b.value, 3, "Should be 4");
 });
