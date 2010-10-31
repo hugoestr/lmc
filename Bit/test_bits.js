@@ -100,10 +100,16 @@ test("It should set a value", function(){
   equals(b.value, 5, "Should be 5");
 });
 
-test("It should add correctly when the value is greater than base", function(){
+test("It should set correctly when the value is greater than base", function(){
   SetUpBase8();
   b.Set(9);
   equals(b.value, 1, "9 should give 11 in base 8, so bit value should be 1");
+});
+
+test("It should set carry correctly when setting than base", function(){
+  SetUpBase8();
+  b.Set(9);
+  equals(b.carry, 1, "9 should give 11 in base 8, so carry value should be 1");
 });
 
 test("It should put reminder value if being set to a number greater than base", function(){
@@ -122,3 +128,5 @@ test("It should set to zero if subtracting more than its value but less than bas
   b.Subtract(2);
   equals(b.value, 0, "by definition");
 });
+
+
