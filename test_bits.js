@@ -35,3 +35,12 @@ test("It should substract a value", function(){
   b.Subtract(1);
   equal(b.value, 0 , "Value should be 0");
 });
+
+test("It should determine its bit value, subtract that value when value greater than its bit value.", function(){
+  SetUp();
+  b.value = 1;
+  b.Subtract(2);
+  equals(b.value, 1, "01 minus 10 would give us 1");
+});
+
+
