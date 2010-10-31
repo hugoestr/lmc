@@ -110,3 +110,8 @@ test("It should put reminder value if being set to a number greater than base", 
   SetUpBase8();
   b.Set(9);
   equals(b.carry, 1, "9 should give 11 in base 8, so the carry should be 1")});
+
+test("It should set negative numbers to zero", function(){
+  SetUpBase8();
+  b.Set(-9);
+  equals(b.value, 0, "Negative numbrs to zero")});
