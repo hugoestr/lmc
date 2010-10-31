@@ -53,3 +53,10 @@ test("It should set carry value when addition exceeds base", function(){
   b.Add(2);
   equal(b.carry, 1, "carry is set to 1");
 });
+
+test("It should set carry for subtraction if value exceeds base", function(){
+  SetUp();
+  b.value = 1;
+  b.Subtract(2);
+  equals(b.carry, 1, "01 minus 10 would give us 11");
+});
