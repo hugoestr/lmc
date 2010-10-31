@@ -47,3 +47,9 @@ test("It should default its carry value to zero", function(){
   SetUp();
   equal(b.carry, 0, "Carry value defaults to zero");
 });
+
+test("It should set carry value when addition exceeds base", function(){
+  SetUp();
+  b.Add(2);
+  equal(b.carry, 1, "carry is set to 1");
+});
