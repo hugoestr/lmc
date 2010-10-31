@@ -7,6 +7,8 @@ function SetUp()
 {
   b = new Bit();
 }
+
+
 test("It should default to base 2", function(){
      SetUp();
      equals(b.base, 2, "default base is 2");
@@ -59,4 +61,16 @@ test("It should set carry for subtraction if value exceeds base", function(){
   b.value = 1;
   b.Subtract(2);
   equals(b.carry, 1, "01 minus 10 would give us 11");
+});
+
+module("Bit, base 10");
+
+function SetUpBase8()
+{
+  b = new Bit(8);
+}
+
+test("It should set default base from constructor", function(){
+  SetUpBase8();
+  equal(b.base, 8, "It should default to 8");
 });

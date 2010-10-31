@@ -1,8 +1,11 @@
-function Bit()
+function Bit(base)
 {
   this.base = 2;
   this.value = 0;
   this.carry = 0;
+
+  if (base != null)
+    this.base = base;
 }
 
 Bit.prototype.Add = function (value){
