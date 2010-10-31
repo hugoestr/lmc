@@ -22,3 +22,9 @@ test("It should add to value", function(){
     b.Add(1);
     equal(b.value, 1, "Value should be 1");
 });
+
+test("It should transforms greater values than its base and add the correct bit", function(){
+  SetUp();
+  b.Add(2);
+  equal(b.value, 0 , "Value should be 0 because 00 & 10 return 10, with this value being 0" );
+});
