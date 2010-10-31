@@ -87,11 +87,25 @@ test("It should add in base 8", function(){
   equals(b.value, 7, "Adding 7 in base 8");
 });
 
-test("It should substract in base 8", function(){
+test("It should subtract in base 8", function(){
+  SetUpBase8();
+  b.value = 7
+  b.Subtract(4);
+  equals(b.value, 3, "It should be 3");
+});
+
+test("It should substract in base 8 when result greater than base", function(){
   SetUpBase8();
   b.value = 7;
-  b.Subtract(4);
-  equals(b.value, 3, "Should be 4");
+  b.Add(1);
+  equals(b.value, 0, "Should be 0");
+});
+
+test("It should substract in base 8 when result greater than base and set carry correctly", function(){
+  SetUpBase8();
+  b.value = 7;
+  b.Add(1);
+  equals(b.carry, 1, "Should be 1");
 });
 
 test("It should set a value", function(){
@@ -129,4 +143,17 @@ test("It should set to zero if subtracting more than its value but less than bas
   equals(b.value, 0, "by definition");
 });
 
+test("It should determine its bit value, subtract that value when value greater than its bit value.", function(){
+  SetUpBase8();
+  b.value = 1;
+  b.Subtract(9);
+  equals(b.value, 0, "01 minus 11 would give us 0 in bit value");
+});
+
+test("It should determine correct carry number when subtraction is greater than value and base.", function(){
+  SetUpBase8();
+  b.value = 1;
+  b.Subtract(9);
+  equals(b.carry, 1, "01 minus 11 would give us 10, with 1 value in carry");
+});
 
