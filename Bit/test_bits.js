@@ -93,3 +93,9 @@ test("It should substract in base 8", function(){
   b.Subtract(4);
   equals(b.value, 3, "Should be 4");
 });
+
+test("It should set a value", function(){
+  SetUpBase8();
+  b.Set(5);
+  equals(b.value, 5, "Should be 5");
+});
