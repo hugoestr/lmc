@@ -157,3 +157,10 @@ test("It should determine correct carry number when subtraction is greater than 
   equals(b.carry, 1, "01 minus 11 would give us 10, with 1 value in carry");
 });
 
+test("It should reset to zero its value", function(){
+  SetUpBase8();
+  b.value = 5;
+  b.Reset();
+  equals(b.value, 0, "value to zero");
+});
+
