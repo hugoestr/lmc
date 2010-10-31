@@ -164,3 +164,9 @@ test("It should reset to zero its value", function(){
   equals(b.value, 0, "value to zero");
 });
 
+test("It should reset to zero its value, carry set to zero also", function(){
+  SetUpBase8();
+  b.carry = 2;
+  b.Reset();
+  equals(b.carry, 0, "value to zero");
+});

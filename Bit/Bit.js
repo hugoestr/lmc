@@ -25,6 +25,7 @@ Bit.prototype.Add = function (value){
 
 Bit.prototype.Reset = function() {
   this.value = 0;
+  this.carry = 0;
 }
 
 Bit.prototype.Set = function(value)
