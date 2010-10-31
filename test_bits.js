@@ -1,17 +1,24 @@
-module("bits");
+module("Bits");
+
+var b;
 
 //setup
-var b = new Bit();
-
-test("Bit has base defaults to 2", function(){
-    
-    equals(b.base, 2, "default base is 2");
+function SetUp()
+{
+  b = new Bit();
+}
+test("It should default to base 2", function(){
+     SetUp();
+     equals(b.base, 2, "default base is 2");
 });
 
-test("Bit has a value, defaults to zero,", function(){
-  equal(b.value, 0, "It should default to zero");
+test("It should default value to zero,", function(){
+   SetUp();
+   equal(b.value, 0, "It should default to zero");
 });
 
-test("Bit be AND", function(){
-    
+test("It should add to value", function(){
+    SetUp();
+    b.Add(1);
+    equal(b.value, 1, "Value should be 1");
 });
