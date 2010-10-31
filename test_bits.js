@@ -43,4 +43,7 @@ test("It should determine its bit value, subtract that value when value greater 
   equals(b.value, 1, "01 minus 10 would give us 1");
 });
 
-
+test("It should default its carry value to zero", function(){
+  SetUp();
+  equal(b.carry, 0, "Carry value defaults to zero");
+});
