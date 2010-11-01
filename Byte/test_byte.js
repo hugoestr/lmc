@@ -41,3 +41,8 @@ test("It should give representation of bits when it has a value, value 10", func
   var bits = b.bits();
   equals(b.bits(), "00001010", "Value 00001010");
 });
+
+test("It should have set carry bit by default to zero", function(){
+  SetUp();
+  equal(b.carry, 0, "carry set to zero");
+});
