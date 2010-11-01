@@ -32,3 +32,6 @@ Bytes.prototype.PadZeroes = function(value){
   return result;
 }
 
+Bytes.prototype.Set = function(value){
+  this.value = value;
+}

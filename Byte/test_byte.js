@@ -44,5 +44,11 @@ test("It should give representation of bits when it has a value, value 10", func
 
 test("It should have set carry bit by default to zero", function(){
   SetUp();
-  equal(b.carry, 0, "carry set to zero");
+  equals(b.carry, 0, "carry set to zero");
+});
+
+test("It should set values", function(){
+  SetUp();
+  b.Set(250);
+  equals(b.value, 250, "it should be 250");
 });
