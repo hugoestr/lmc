@@ -21,3 +21,15 @@ test("It should default to zero", function(){
   SetUp();
   equals(b.value, 0, "default value 0");
 });
+
+test("It should default to zero when representing string", function(){
+    SetUp();
+    var bits = b.bits();
+    equals(b.bits(), "00000000", "bit representation");
+});
+
+test("It should give representation of bits when it has a value, value 1", function(){
+  SetUp();
+  var bits = b.bits();
+  equals(b.bits(), "00000001", "Value 00000001");
+});
