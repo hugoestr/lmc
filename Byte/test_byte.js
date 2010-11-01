@@ -30,6 +30,14 @@ test("It should default to zero when representing string", function(){
 
 test("It should give representation of bits when it has a value, value 1", function(){
   SetUp();
+  b.value = 1;
   var bits = b.bits();
   equals(b.bits(), "00000001", "Value 00000001");
+});
+
+test("It should give representation of bits when it has a value, value 10", function(){
+  SetUp();
+  b.value = 10;
+  var bits = b.bits();
+  equals(b.bits(), "00001010", "Value 00001010");
 });

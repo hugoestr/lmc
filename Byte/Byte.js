@@ -12,7 +12,7 @@ Bytes.prototype.bits = function(){
 
   for (var i= 0; value > 0 ; i++){
     var digit = value % this.base;
-    value /= this.base;
+    value = (value - digit) / this.base;
     result = digit + result;
   }
 
