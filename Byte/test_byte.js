@@ -16,3 +16,8 @@ test("It should default base to 2 ", function(){
     SetUp();
     equals(b.base, 2, "default base 2");
 });
+
+test("It should default to zero", function(){
+  SetUp();
+  equals(b.value, 0, "default value 0");
+});
