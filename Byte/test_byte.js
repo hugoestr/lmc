@@ -52,3 +52,10 @@ test("It should set values", function(){
   b.Set(250);
   equals(b.value, 250, "it should be 250");
 });
+
+test("It should add values adding below the the bit limit", function(){
+  SetUp();
+  b.Set(25);
+  b.Add(25);
+  equals(b.value, 50, "It should add to 50");
+});

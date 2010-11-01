@@ -7,6 +7,10 @@ function Bytes()
 
 }
 
+Bytes.prototype.Add = function(value){
+  this.value += value;
+}
+
 Bytes.prototype.bits = function(){ 
   var result = "";
   var value = this.value;
