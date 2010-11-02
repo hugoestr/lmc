@@ -9,6 +9,10 @@ function Bytes()
 
 Bytes.prototype.Add = function(value){
   this.value += value;
+  if (this.value >= Math.pow(this.base, this.size))
+  {
+    this.value = 0;
+  }
 }
 
 Bytes.prototype.bits = function(){ 

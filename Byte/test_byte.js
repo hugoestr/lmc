@@ -59,3 +59,10 @@ test("It should add values adding below the the bit limit", function(){
   b.Add(25);
   equals(b.value, 50, "It should add to 50");
 });
+
+test("It should add values going over the bit limit, keeping only the top limit", function(){
+  SetUp();
+  b.Set(255);
+  b.Add(1);
+  equals(b.value, 0, "expected 0");
+});
