@@ -73,3 +73,10 @@ test("It should add values going over the bit limit, adding 1 to carry", functio
   b.Add(1);
   equals(b.carry, 1, "expected carry 1");
 });
+
+test("It should be able to subtract the values", function(){
+    SetUp();
+    b.Set(255);
+    b.Subtract(200);
+    equals(b.value, 55, "expected value is 55");
+});

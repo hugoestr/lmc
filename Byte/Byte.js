@@ -44,3 +44,8 @@ Bytes.prototype.PadZeroes = function(value){
 Bytes.prototype.Set = function(value){
   this.value = value;
 }
+
+Bytes.prototype.Subtract = function(value)
+{
+  this.value -= value;
+}
