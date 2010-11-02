@@ -87,3 +87,10 @@ test("It should set negative numbers results to zero", function(){
   b.Subtract(200);
   equals(b.value, 0, "expected value is zero");
 });
+
+test("It should not allow numbers to be added greater than limit", function(){
+  SetUp();
+  b.Set(25);
+  b.Add(300);
+  equals(b.value, 25, "Adition doesn't take place");
+});

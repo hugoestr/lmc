@@ -8,11 +8,15 @@ function Bytes()
 }
 
 Bytes.prototype.Add = function(value){
-  this.value += value;
-  if (this.value >= Math.pow(this.base, this.size))
+  var upperLimit = Math.pow(this.base, this.size);
+  if (value < upperLimit)
   {
-    this.value = 0;
-    this.carry = 1;
+    this.value += value;
+    if (this.value >= upperLimit)
+    {
+      this.value = 0;
+      this.carry = 1;
+    }
   }
 }
 
