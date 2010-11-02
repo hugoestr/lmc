@@ -12,6 +12,7 @@ Bytes.prototype.Add = function(value){
   if (this.value >= Math.pow(this.base, this.size))
   {
     this.value = 0;
+    this.carry = 1;
   }
 }
 

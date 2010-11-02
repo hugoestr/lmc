@@ -66,3 +66,10 @@ test("It should add values going over the bit limit, keeping only the top limit"
   b.Add(1);
   equals(b.value, 0, "expected 0");
 });
+
+test("It should add values going over the bit limit, adding 1 to carry", function(){
+  SetUp();
+  b.Set(255);
+  b.Add(1);
+  equals(b.carry, 1, "expected carry 1");
+});
