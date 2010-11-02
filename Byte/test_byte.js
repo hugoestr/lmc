@@ -80,3 +80,10 @@ test("It should be able to subtract the values", function(){
     b.Subtract(200);
     equals(b.value, 55, "expected value is 55");
 });
+
+test("It should set negative numbers results to zero", function(){
+  SetUp();
+  b.Set(1);
+  b.Subtract(200);
+  equals(b.value, 0, "expected value is zero");
+});

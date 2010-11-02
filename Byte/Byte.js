@@ -48,4 +48,8 @@ Bytes.prototype.Set = function(value){
 Bytes.prototype.Subtract = function(value)
 {
   this.value -= value;
+
+  if (this.value < 0){
+    this.value = 0;
+  }
 }
