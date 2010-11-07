@@ -3,6 +3,7 @@ function Lmc(){
   var base = 10; 
 
   this.accumulator = new Bytes(byte_size, base);
+  this.counter = 0;
   this.memory = this.initialize_memory(byte_size, base, 100);
 }
 
