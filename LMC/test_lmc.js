@@ -22,3 +22,14 @@ test("It should have a counter that defaults to zero", function(){
   SetUp();
   equals(l.counter, 0, "Counter is set at zero");
 });
+
+test("It should have a and input box that defaults to zero", function(){
+  SetUp();
+  equals(l.input.value, 0, "Counter is set at zero");
+});
+
+test("It should have a and input box that defaults to zero", function(){
+  SetUp();
+  equals(l.output.value, 0, "Counter is set at zero");
+});
+
