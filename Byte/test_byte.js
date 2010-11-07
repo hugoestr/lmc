@@ -7,6 +7,11 @@ function SetUp()
   b = new Bytes();
 }
 
+function SetUpDecimal()
+{
+  b = new Bytes(2, 10);
+}
+
 test("It should default bit size to 8", function(){
     SetUp();
     equals(b.size, 8, "it should default to 8");
@@ -92,5 +97,27 @@ test("It should not allow numbers to be added greater than limit", function(){
   SetUp();
   b.Set(25);
   b.Add(300);
-  equals(b.value, 25, "Adition doesn't take place");
+  equals(b.value, 25, "Addition doesn't take place");
+});
+
+test("It should add the number in decimal", function(){
+  SetUpDecimal();
+  b.Set(23);
+  b.Add(40);
+  equals(b.value, 63, "It should 63");
+});
+
+
+test("It should go over 100 , with 00 in decimal", function(){
+  SetUpDecimal();
+  b.Set(99);
+  b.Add(1);
+  equals(b.value, 00, "It should 00");
+});
+
+test("It should go over 100, with carry 1", function(){
+  SetUpDecimal();
+  b.Set(99);
+  b.Add(1);
+  equals(b.carry, 1, "It should be 1");
 });

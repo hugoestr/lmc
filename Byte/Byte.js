@@ -1,9 +1,17 @@
-function Bytes()
+function Bytes(size, base)
 {
   this.size = 8;
   this.base = 2;
   this.value = 0;
   this.carry = 0;
+
+  if (size != undefined){
+    this.size = size;
+  }
+
+  if (base != undefined){
+    this.base = base;
+  }
 
 }
 
