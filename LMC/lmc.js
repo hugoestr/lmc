@@ -38,3 +38,7 @@ Lmc.prototype.ADD = function(address) {
 Lmc.prototype.SUB = function(address) {
   this.accumulator.Subtract(this.memory[address].value);
 }
+
+Lmc.prototype.STA = function(address) {
+  this.memory[address].Set(this.accumulator.value);
+}
