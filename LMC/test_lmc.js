@@ -54,4 +54,12 @@ test("It should implement ADD, 1XX", function(){
   equals(l.accumulator.value, 200, "Value should be 200");
 });
 
+test("It should implement SUB, 2XX", function(){
+  SetUp();
+  l.accumulator.Set(400);
+  l.memory[0].Set(200);
+  l.SUB(0);
+  equals(l.accumulator.value, 200, "Value should be 200");
+});
+
 

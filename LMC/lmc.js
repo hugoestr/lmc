@@ -34,3 +34,7 @@ Lmc.prototype.IncrementCounter = function() {
 Lmc.prototype.ADD = function(address) {
   this.accumulator.Add(this.memory[address].value);
 }
+
+Lmc.prototype.SUB = function(address) {
+  this.accumulator.Subtract(this.memory[address].value);
+}
