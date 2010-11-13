@@ -55,3 +55,7 @@ Lmc.prototype.BRZ = function(address) {
   if (this.accumulator.value == 0)
     this.counter = address;
 }
+
+Lmc.prototype.INP = function() {
+  this.accumulator.Set(this.input.value);
+}
