@@ -59,3 +59,7 @@ Lmc.prototype.BRZ = function(address) {
 Lmc.prototype.INP = function() {
   this.accumulator.Set(this.input.value);
 }
+
+Lmc.prototype.OUT = function() {
+  this.output.Set(this.accumulator.value);
+}

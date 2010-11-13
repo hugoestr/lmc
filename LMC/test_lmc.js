@@ -105,3 +105,9 @@ test("It should implement 901, read input", function(){
   equals(l.accumulator.value, 673, "Accumulator should now be 673");
 });
 
+test("It should implement OUT 902", function() {
+  SetUp();
+  l.accumulator.Set(43);
+  l.OUT();
+  equals(l.output.value, 43, "It should be 43");
+});
