@@ -40,9 +40,18 @@ test("Counter should be able to be reset to zero", function() {
     equals(l.counter, 0, "Counter reset to zero");
 });
 
+test("Counter should become zero is it goes over 100", function() {
+  SetUp();
+  l.counter = 99;
+  l.IncrementCounter();
+  equals(l.counter, 0, "It should be zero");
+});
+
 test("It should implement ADD, 1XX", function(){
   SetUp();
   l.memory[0].Set(200);
   l.ADD(0);
   equals(l.accumulator.value, 200, "Value should be 200");
 });
+
+

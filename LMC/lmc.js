@@ -25,6 +25,12 @@ Lmc.prototype.Reset = function() {
   this.counter = 0;
 }
 
+Lmc.prototype.IncrementCounter = function() {
+  this.counter++;
+  if (this.counter >= 100)
+    this.counter = 0;
+}
+
 Lmc.prototype.ADD = function(address) {
   this.accumulator.Add(this.memory[address].value);
 }
