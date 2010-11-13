@@ -42,3 +42,7 @@ Lmc.prototype.SUB = function(address) {
 Lmc.prototype.STA = function(address) {
   this.memory[address].Set(this.accumulator.value);
 }
+
+Lmc.prototype.LDA = function(address) {
+  this.accumulator.Set(this.memory[address].value);
+}

@@ -68,3 +68,10 @@ test("It should implement STA, 3XX", function(){
   l.STA(2);
   equals(l.memory[2].value, 234, "The value should be 234");
 });
+
+test("It should implement LDA, 5XX", function(){
+  SetUp();
+  l.memory[34].Set(654);
+  l.LDA(34);
+  equals(l.accumulator.value, 654, "It should be 654");
+});
