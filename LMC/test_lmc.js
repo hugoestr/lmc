@@ -82,3 +82,10 @@ test("It should implement BRA, 6XX", function(){
   l.BRA(78);
   equals(l.counter, 78, "It should be equal to 78");
 });
+
+test("It should implement BRZ, 7XX, branching when 000", function(){
+  SetUp();
+  l.accumulator.Set(0);
+  l.BRZ(86);
+  equals(l.counter, 86, "It is true, so counter should be 86");
+});

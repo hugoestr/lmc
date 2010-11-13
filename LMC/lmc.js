@@ -50,3 +50,8 @@ Lmc.prototype.LDA = function(address) {
 Lmc.prototype.BRA = function(address) {
   this.counter = address;
 }
+
+Lmc.prototype.BRZ = function(address) {
+  if (this.accumulator.value == 0)
+    this.counter = address;
+}
