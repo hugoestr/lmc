@@ -89,3 +89,11 @@ test("It should implement BRZ, 7XX, branching when 000", function(){
   l.BRZ(86);
   equals(l.counter, 86, "It is true, so counter should be 86");
 });
+
+test("It should implement BRZ, 7XX, not branching", function(){
+  SetUp();
+  l.accumulator.Set(23);
+  l.BRZ(86);
+  equals(l.counter, 0, "It is true, so counter should be 0");
+});
+
