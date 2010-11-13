@@ -20,3 +20,11 @@ Lmc.prototype.initialize_memory = function(byte_size, base, array_size){
 
   return result;
 }
+
+Lmc.prototype.Reset = function() {
+  this.counter = 0;
+}
+
+Lmc.prototype.ADD = function(address) {
+  this.accumulator.Add(this.memory[address].value);
+}

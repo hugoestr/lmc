@@ -33,3 +33,16 @@ test("It should have a and input box that defaults to zero", function(){
   equals(l.output.value, 0, "Counter is set at zero");
 });
 
+test("Counter should be able to be reset to zero", function() {
+    SetUp();
+    l.counter = 200;
+    l.Reset();
+    equals(l.counter, 0, "Counter reset to zero");
+});
+
+test("It should implement ADD, 1XX", function(){
+  SetUp();
+  l.memory[0].Set(200);
+  l.ADD(0);
+  equals(l.accumulator.value, 200, "Value should be 200");
+});
