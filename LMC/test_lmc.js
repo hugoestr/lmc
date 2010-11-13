@@ -75,3 +75,10 @@ test("It should implement LDA, 5XX", function(){
   l.LDA(34);
   equals(l.accumulator.value, 654, "It should be 654");
 });
+
+test("It should implement BRA, 6XX", function(){
+  SetUp();
+  l.counter = 23;
+  l.BRA(78);
+  equals(l.counter, 78, "It should be equal to 78");
+});
