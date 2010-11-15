@@ -68,3 +68,16 @@ Lmc.prototype.INP = function() {
 Lmc.prototype.OUT = function() {
   this.output.Set(this.accumulator.value);
 }
+
+Lmc.prototype.DAT = function(value) {
+  for(var i = 0; i < this.memory.length; i++){
+    if (this.memory[i].value == 0){
+      this.memory[i].Set(value);
+      break;
+    }
+  }
+}
+
+Lmc.prototype.Execute = function(value) {
+  this.counter++;
+}

@@ -118,3 +118,23 @@ test("It should implement OUT 902", function() {
   l.OUT();
   equals(l.output.value, 43, "It should be 43");
 });
+
+test("It should implement DAT with zero used", function(){
+  SetUp();
+  l.DAT(243);
+  equals(l.memory[0].value, 243, "It should be 243");
+});
+
+test("It should implement DAT, where the first available entry is not zero", function(){
+  SetUp();
+  l.memory[0].Set(1);
+  l.memory[1].Set(2);
+  l.DAT(243);
+  equals(l.memory[2].value, 243, "It should be 243");
+});
+
+test("It should increment counter when execute cycle occurs", function(){
+  SetUp();
+  l.Execute();
+  equals(l.counter, 1, "Counter should be move to 1");
+});
