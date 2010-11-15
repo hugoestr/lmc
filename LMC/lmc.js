@@ -84,6 +84,53 @@ Lmc.prototype.HLT = function(){
   this.is_on = false;
 }
 
+Lmc.prototype.Symbols = function(op, value) {
+ switch(op){
+  case 0:
+    this.HLT();
+    break;
+  case 1:
+    this.ADD(value);
+    break;
+  case 2:
+    this.SUB(value);
+    break;
+  case 3:
+    this.STA(value);
+    break;
+  case 5:
+    this.LDA(value);
+    break;
+  case 6:
+    this.BRA(value);
+    break;
+  case 7:
+    this.BRZ(value);
+    break;
+  case 8:
+    this.BRP(value);
+    break;
+  case 9:
+    this.INOUT(value);
+  default:
+    break;
+ }
+}
+
+Lmc.prototype.INOUT = function(value) {
+  if (value == 1)
+    this.INP();
+  else
+    this.OUT();
+}
+
 Lmc.prototype.Execute = function(value) {
+  var instructionAddress = this.counter;
+  var instruction = this.memory[instructionAddress].bits();
   this.counter++;
+
+  var op = parseInt(instruction[0]);
+  var address = parseInt(instruction.slice(1));
+
+  this.Symbols(op, address);
 }

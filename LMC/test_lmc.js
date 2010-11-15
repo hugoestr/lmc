@@ -149,13 +149,16 @@ test("It should implement DAT, where the first available entry is not zero", fun
 });
 
 
-test("It should grab the current counter value, and grab that instruction", function(){
-  SetUp();
-  l.Execute
-});
-
 test("It should increment counter when execute cycle occurs", function(){
-  SetUp();
+  SetUpExecution();
   l.Execute();
   equals(l.counter, 1, "Counter should be move to 1");
 });
+
+test("It should correctly do one step from the execute cycle", function(){
+    SetUpExecution();
+    l.Execute();
+    equals(l.accumulator.value, 236, "It should be equals to 236");
+});
+
+
