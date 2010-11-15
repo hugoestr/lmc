@@ -97,6 +97,13 @@ test("It should implement BRZ, 7XX, not branching", function(){
   equals(l.counter, 0, "It is true, so counter should be 0");
 });
 
+test("It should implement BRP, 8XX, branching", function(){
+  SetUp();
+  l.accumulator.Set(0);
+  l.BRP(98);
+  equals(l.counter, 98, "It is true, it should be 98");
+});
+
 test("It should implement 901, read input", function(){
   SetUp();
   l.accumulator.Set(234);
