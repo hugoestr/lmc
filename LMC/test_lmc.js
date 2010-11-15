@@ -8,6 +8,14 @@ function SetUp()
   l = new Lmc();
 }
 
+function SetUpExecution()
+{
+  l = new Lmc();
+  l.memory[0].Set(101);
+  l.memory[1].Set(236);
+  l.memory[2].Set(000);
+}
+
 test("It should have 100 rows of memory", function(){
   SetUp();
   equals(l.memory.length, 100, "It has 100 cells");
@@ -119,6 +127,13 @@ test("It should implement OUT 902", function() {
   equals(l.output.value, 43, "It should be 43");
 });
 
+test("It should implement HLT 000", function(){
+  SetUp();
+  l.is_on = true;
+  l.HLT();
+  equals(l.is_on, false, "on should be false");
+});
+
 test("It should implement DAT with zero used", function(){
   SetUp();
   l.DAT(243);
@@ -131,6 +146,12 @@ test("It should implement DAT, where the first available entry is not zero", fun
   l.memory[1].Set(2);
   l.DAT(243);
   equals(l.memory[2].value, 243, "It should be 243");
+});
+
+
+test("It should grab the current counter value, and grab that instruction", function(){
+  SetUp();
+  l.Execute
 });
 
 test("It should increment counter when execute cycle occurs", function(){

@@ -4,6 +4,8 @@ function Lmc(){
 
   this.accumulator = new Bytes(byte_size, base);
   this.counter = 0;
+  this.is_on = false;
+
   this.input = new Bytes(byte_size, base);
   this.output = new Bytes(byte_size, base);
   this.memory = this.initialize_memory(byte_size, base, 100);
@@ -76,6 +78,10 @@ Lmc.prototype.DAT = function(value) {
       break;
     }
   }
+}
+
+Lmc.prototype.HLT = function(){
+  this.is_on = false;
 }
 
 Lmc.prototype.Execute = function(value) {
