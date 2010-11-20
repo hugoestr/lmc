@@ -50,18 +50,70 @@
         margin: 10px;
       }
 
+      .editor {
+        width: 50px;
+      }
+
+      .editor textarea {
+        width: 150px;
+      }
+
+      #memory_value {
+        height: 200px;
+        overflow: scroll;
+        border-color: purple;
+        border-style: solid;
+        border-width: 2px;
+      }
+
       </style>
     <div id="border">
       <h1>Little Man Computer</h1>
       <div id="panel">
         <div id="Editor">
-          Editor
+          <h2>Editor</h2>
+          <div class="editor" style="float: left; margin-left: 20px;">
+            <div class="label">Assembly</div>
+            <div class="input"><textarea id="editor_assembly"></textarea></div>
+
+            <div class="label"></div>
+            <div class="input"><input type="button" id="translate" value="translate" /></div>
+
+          </div>
+
+          <div class="editor" style="float: right; margin-right: 20px;">
+            <div class="label">Machine</div>
+            <div class="input"><textarea id="editor_machine"></textarea></div>
+
+            <div class="label"></div>
+            <div class="input"><input type="button" id="load" value="load" /></div>
+
+          </div>
         </div>
         <div id="Registers">
-          Registers
+          <h2>Registers</h2>
+          <div class="label">Calculator</div>
+          <div class="input"><input id="calculator" type="text" width="20"></div>
+          <div class="label">Counter</div>
+          <div class="input"><input id="counter" type="text" width="20"></div>
+
+          <div class="label">Input</div>
+          <div class="input"><input id="input" type="text" width="20"></div>
+
+          <div class="label">Output</div>
+          <div class="input"><input id="output" type="text" width="20"></div>
+
+          <div class="label"></div>
+          <div class="input"><input type="button" id="run" value="run" /></div>
+
+          <div class="label"></div>
+          <div class="input"><input type="button" id="reset"  value="reset" /></div>
+
         </div>
         <div id="Memory">
-          Memory
+          <div class="label">Memory</div>
+          <div id="memory_value">
+          </div>
         </div>
       </div>
     </div>
