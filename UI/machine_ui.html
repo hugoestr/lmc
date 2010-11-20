@@ -50,20 +50,22 @@
         margin: 10px;
       }
 
-      .editor {
-        width: 50px;
-      }
-
       .editor textarea {
         width: 150px;
+        height: 200px;
       }
 
       #memory_value {
-        height: 200px;
+        height: 300px;
         overflow: scroll;
         border-color: purple;
         border-style: solid;
         border-width: 2px;
+      }
+
+      .buttons {
+        margin: 5px;
+        margin-left: 0px;
       }
 
       </style>
@@ -103,11 +105,10 @@
           <div class="label">Output</div>
           <div class="input"><input id="output" type="text" width="20"></div>
 
-          <div class="label"></div>
-          <div class="input"><input type="button" id="run" value="run" /></div>
+          <div class="buttons">
+          <input type="button" id="run" value="run" />
 
-          <div class="label"></div>
-          <div class="input"><input type="button" id="reset"  value="reset" /></div>
+          <input type="button" id="reset"  value="reset" style="margin-left:20px;" /></div>
 
         </div>
         <div id="Memory">
