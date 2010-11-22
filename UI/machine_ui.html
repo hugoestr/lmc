@@ -69,6 +69,61 @@
       }
 
       </style>
+<script type="text/javascript" src="jquery-1.4.2.js"/></script>
+<script type="text/javascript" src="../qunit/qunit.js"></script>
+<script type="text/javascript" src="../Byte/Byte.js"></script>
+<script type="text/javascript" src="../LMC/lmc.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    c = new Lmc();
+    updateState(c);
+    binding(c);
+  });
+
+  function binding(){
+    $("#stop").click(function(){
+      c.is_on = false;
+      $("#on-off-label").html("Off");
+      updateState(c);
+    });
+
+    $("#run").click(function(){
+      c.is_on = true;
+      $("#on-off-label").html("On");
+      updateState(c);
+    });
+    
+    $("#step").click(function(){
+      c.Execute();
+      updateState(c);
+    });
+
+    $("#reset").click(function(){
+      c.Reset();
+      updateState(c);
+    });
+
+  }
+
+  function updateState(computer){
+    $("#calculator").val(computer.accumulator.bits());
+    $("#counter").val(computer.counter);
+    $("#memory_value").html(memory_markup(computer));
+  }
+
+  function memory_markup(c){
+    var result = "<div id='memory-tree'>";
+    for (var i = 0; i < c.memory.length ; i++){
+      result += "<div class='memory-byte' id='memory-address=" + i + "'>" + i +  "|" + c.memory[i].bits() +  "</div>";
+    }
+    result += "</div>";
+
+    return result;
+  }
+
+</script>
+
     <div id="border">
       <h1>Little Man Computer</h1>
       <div id="panel">
@@ -105,14 +160,19 @@
           <div class="label">Output</div>
           <div class="input"><input id="output" type="text" width="20"></div>
 
+          <div id="on-off-label">Off</div>
+
           <div class="buttons">
           <input type="button" id="run" value="run" />
+          <input type="button" id="stop" value="stop" style="margin-left:20px;" />
+          <input type="button" id="reset"  value="reset" style="margin-left:20px;" />
+          <input type="button" id="step"  value="step" style="margin-left:20px;" />
 
-          <input type="button" id="reset"  value="reset" style="margin-left:20px;" /></div>
+</div>
 
         </div>
         <div id="Memory">
-          <div class="label">Memory</div>
+          <h2 style="margin-bottom: 0px; margin-top: 0px;">Memory</h2>
           <div id="memory_value">
           </div>
         </div>
