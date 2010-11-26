@@ -68,6 +68,13 @@
         margin-left: 0px;
       }
 
+      .highlighted {
+        background-color: yellow;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+      }
+
       </style>
 <script type="text/javascript" src="jquery-1.4.2.js"/></script>
 <script type="text/javascript" src="../qunit/qunit.js"></script>
@@ -92,6 +99,7 @@
       $("#on-off-label").html("On");
       c.Run();
       updateState(c);
+      $("#on-off-label").html("Off");
     });
     
     $("#step").click(function(){
@@ -119,6 +127,15 @@
     
     $("#input").val(computer.input.bits());
     $("#output").val(computer.output.bits());
+
+    highlightMemory();
+  }
+
+  function highlightMemory(){
+    var highlightedMemoryCell = "#memory-address-" + c.counter;
+
+    $(".memory-byte").removeClass("highlighted");
+    $(highlightedMemoryCell).addClass("highlighted");
   }
 
   function memory_markup(c){
