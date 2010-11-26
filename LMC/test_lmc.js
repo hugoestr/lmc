@@ -173,3 +173,10 @@ test("It should clear the accumulator when ressetting", function(){
   l.Reset();
   equals(l.accumulator.value, 0, "It should be zero");
 });
+
+test("It should clear input at ressetting", function(){
+  SetUp();
+  l.input.Set(32);
+  l.Reset();
+  equals(l.input.value, 0, "It should be zero");
+});

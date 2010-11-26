@@ -26,6 +26,7 @@ Lmc.prototype.initialize_memory = function(byte_size, base, array_size){
 Lmc.prototype.Reset = function() {
   this.counter = 0;
   this.accumulator.Set(0);
+  this.input.Set(0);
 }
 
 Lmc.prototype.IncrementCounter = function() {
