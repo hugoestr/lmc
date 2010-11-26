@@ -89,8 +89,8 @@
     });
 
     $("#run").click(function(){
-      c.is_on = true;
       $("#on-off-label").html("On");
+      c.Run();
       updateState(c);
     });
     
@@ -102,6 +102,12 @@
     $("#reset").click(function(){
       c.Reset();
       updateState(c);
+      });
+
+    $("#load").click(function(){
+      var instructions = $("#editor_machine").val();
+      c.Load(instructions);
+      updateState(c);
     });
 
   }
@@ -110,12 +116,15 @@
     $("#calculator").val(computer.accumulator.bits());
     $("#counter").val(computer.counter);
     $("#memory_value").html(memory_markup(computer));
+    
+    $("#input").val(computer.input.bits());
+    $("#output").val(computer.output.bits());
   }
 
   function memory_markup(c){
     var result = "<div id='memory-tree'>";
     for (var i = 0; i < c.memory.length ; i++){
-      result += "<div class='memory-byte' id='memory-address=" + i + "'>" + i +  "|" + c.memory[i].bits() +  "</div>";
+      result += "<div class='memory-byte' id='memory-address-" + i + "'>" + i +  "|" + c.memory[i].bits() +  "</div>";
     }
     result += "</div>";
 
