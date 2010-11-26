@@ -194,3 +194,4 @@ test("It should load", function(){
   l.Load(instructions);
   equals(l.memory[1].value, 236, "It should be ");
 });
+
