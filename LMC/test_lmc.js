@@ -180,3 +180,10 @@ test("It should clear input at ressetting", function(){
   l.Reset();
   equals(l.input.value, 0, "It should be zero");
 });
+
+test("It should be clear output at ressetting", function(){
+  SetUp();
+  l.output.Set(32);
+  l.Reset();
+  equals(l.output.value, 0, "It should be zero");
+});
