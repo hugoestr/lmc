@@ -145,3 +145,11 @@ Lmc.prototype.Run = function(){
     this.Execute();
   }
 }
+
+Lmc.prototype.Load = function(instructions) {
+  var ops = instructions.split('\n');
+  
+  for(var i = 0; i < ops.length ; i++) {
+      this.memory[i].Set(parseInt(ops[i]));
+  }
+}

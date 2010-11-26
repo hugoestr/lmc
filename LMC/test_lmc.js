@@ -187,3 +187,10 @@ test("It should be clear output at ressetting", function(){
   l.Reset();
   equals(l.output.value, 0, "It should be zero");
 });
+
+test("It should load", function(){
+  SetUp();
+  var instructions = "101\n236\n000";
+  l.Load(instructions);
+  equals(l.memory[1].value, 236, "It should be ");
+});
