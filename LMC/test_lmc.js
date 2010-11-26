@@ -161,4 +161,8 @@ test("It should correctly do one step from the execute cycle", function(){
     equals(l.accumulator.value, 236, "It should be equals to 236");
 });
 
-
+test("It should run continously until halt", function(){
+    SetUpExecution();
+    l.Run();
+    equals(l.counter, 3, "It should be two in the counter");
+});

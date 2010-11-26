@@ -124,7 +124,7 @@ Lmc.prototype.INOUT = function(value) {
     this.OUT();
 }
 
-Lmc.prototype.Execute = function(value) {
+Lmc.prototype.Execute = function() {
   var instructionAddress = this.counter;
   var instruction = this.memory[instructionAddress].bits();
   this.counter++;
@@ -133,4 +133,11 @@ Lmc.prototype.Execute = function(value) {
   var address = parseInt(instruction.slice(1));
 
   this.Symbols(op, address);
+}
+
+Lmc.prototype.Run = function(){
+  this.is_on = true;
+  while (this.is_on){
+    this.Execute();
+  }
 }
