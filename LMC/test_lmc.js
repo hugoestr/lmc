@@ -166,3 +166,10 @@ test("It should run continously until halt", function(){
     l.Run();
     equals(l.counter, 3, "It should be two in the counter");
 });
+
+test("It should clear the accumulator when ressetting", function(){
+  SetUp();
+  l.accumulator.Set(234);
+  l.Reset();
+  equals(l.accumulator.value, 0, "It should be zero");
+});
