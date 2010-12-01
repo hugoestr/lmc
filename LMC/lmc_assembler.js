@@ -16,18 +16,23 @@ function Lmc_Assembler(){
 }
 
 Lmc_Assembler.prototype.Assemble = function(input){
- var result = "";
  this.lables = {};
 
+ result = this.ParseInput(input); 
+ result = this.ReplaceLabels(result);
+
+ result = result.replace(/\n$/, "");
+
+ return result;
+}
+
+Lmc_Assembler.prototype.ParseInput = function(input){
+ var result = "";
  var lines = input.split("\n");
  
  for(var i = 0; i < lines.length; i++){
     result += this.parseLine(lines[i], i) + "\n";
  }
- 
- result = this.ReplaceLabels(result);
-
- result = result.replace(/\n$/, "");
 
  return result;
 }
