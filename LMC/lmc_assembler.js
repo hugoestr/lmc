@@ -25,9 +25,7 @@ Lmc_Assembler.prototype.Assemble = function(input){
     result += this.parseLine(lines[i], i) + "\n";
  }
  
- for(var key in this.labels){
-    result = result.replace(key, this.labels[key]);
- }
+ result = this.ReplaceLabels(result);
 
  result = result.replace(/\n$/, "");
 
@@ -50,6 +48,16 @@ Lmc_Assembler.prototype.parseLine = function(input, line){
      
  if (tokens[1] != null)
   result += tokens[1];
+
+  return result;
+}
+
+Lmc_Assembler.prototype.ReplaceLabels = function(input){
+  var result = input;
+
+  for(var key in this.labels){
+    result = result.replace(key, this.labels[key]);
+  }
 
   return result;
 }
