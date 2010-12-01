@@ -33,6 +33,13 @@ test("It should translate STA correctly", function(){
   equals(output, "334", "It should be 334");
 });
 
+test("It should translate LDA correctly", function(){
+  SetUp();
+  var line = "LDA 73";
+  var output = a.Assemble(line);
+  equals(output, "573", "It should be 573");
+});
+
 test("It should handle well two lines of code", function(){
   SetUp();
   var line = "ADD 12\nSUB 14";

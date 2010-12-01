@@ -3,7 +3,8 @@ function Lmc_Assembler(){
   "HLT" : 0, 
   "ADD" : 1, 
   "SUB" : 2, 
-  "STA" : 3
+  "STA" : 3,
+  "LDA" : 5,
   };
 }
 
