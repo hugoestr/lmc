@@ -61,6 +61,21 @@ test("It should translate BRP correctly", function(){
   equals(output, "852", "It should be 852");
 });
 
+test("It should translate INP correctly", function(){
+  SetUp();
+  var line = "INP";
+  var output = a.Assemble(line);
+  equals(output, "901", "It should be 901");
+});
+
+test("It should translate OUT correctly", function(){
+  SetUp();
+  var line = "OUT";
+  var output = a.Assemble(line);
+  equals(output, "902", "It should be 902");
+});
+
+
 test("It should handle well two lines of code", function(){
   SetUp();
   var line = "ADD 12\nSUB 14";

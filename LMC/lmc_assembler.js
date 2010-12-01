@@ -8,6 +8,8 @@ function Lmc_Assembler(){
   "BRA" : 6,
   "BRZ" : 7,
   "BRP" : 8,
+  "INP" : 901,
+  "OUT" : 902,
   };
 }
 
@@ -28,7 +30,10 @@ Lmc_Assembler.prototype.parseLine = function(input ){
  var result = "";
  var tokens = input.split(" ");
  
- result = this.symbols[tokens[0]] + tokens[1];
+   result = this.symbols[tokens[0]] 
+     
+  if (tokens[1] != null)
+    result += tokens[1];
 
   return result;
 }
