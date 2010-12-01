@@ -7,6 +7,7 @@ function Lmc_Assembler(){
   "LDA" : 5,
   "BRA" : 6,
   "BRZ" : 7,
+  "BRP" : 8,
   };
 }
 

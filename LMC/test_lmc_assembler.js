@@ -54,6 +54,13 @@ test("It should translate BRZ correctly", function(){
   equals(output, "783", "It should be 783");
 });
 
+test("It should translate BRP correctly", function(){
+  SetUp();
+  var line = "BRP 52";
+  var output = a.Assemble(line);
+  equals(output, "852", "It should be 852");
+});
+
 test("It should handle well two lines of code", function(){
   SetUp();
   var line = "ADD 12\nSUB 14";
