@@ -88,3 +88,10 @@ test("It should handle well two lines of code", function(){
   var output = a.Assemble(line);
   equals(output, "112\n214", "It should be 112[newline]214");
 });
+
+test("It should ignore comments", function(){
+  SetUp();
+  var line = "ADD 12 //This is a line\nSUB 14 //Second comment";
+  var output = a.Assemble(line);
+  equals(output, "112\n214", "It should be 112[newline]214");
+});

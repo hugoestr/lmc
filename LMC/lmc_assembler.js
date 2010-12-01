@@ -26,8 +26,9 @@ Lmc_Assembler.prototype.Assemble = function(input){
  return result;
 }
 
-Lmc_Assembler.prototype.parseLine = function(input ){
+Lmc_Assembler.prototype.parseLine = function(input){
  var result = "";
+ input = input.replace(/\/\/.*$/g, "");
  var tokens = input.split(" ");
  
    result = this.symbols[tokens[0]] 
