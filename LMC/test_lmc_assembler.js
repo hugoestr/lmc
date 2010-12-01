@@ -25,3 +25,10 @@ test("It should translate SUB correctly", function(){
   var output = a.Assemble(line);
   equals(output, "212", "It should be 212");
 });
+
+test("It should handle well two lines of code", function(){
+  SetUp();
+  var line = "ADD 12\nSUB 14";
+  var output = a.Assemble(line);
+  equals(output, "112\n214", "It should be 112[newline]214");
+});
