@@ -40,6 +40,13 @@ test("It should translate LDA correctly", function(){
   equals(output, "573", "It should be 573");
 });
 
+test("It should translate BRA correctly", function(){
+  SetUp();
+  var line = "BRA 94";
+  var output = a.Assemble(line);
+  equals(output, "694", "It should be 694");
+});
+
 test("It should handle well two lines of code", function(){
   SetUp();
   var line = "ADD 12\nSUB 14";
