@@ -6,6 +6,7 @@ function Lmc_Assembler(){
   "STA" : 3,
   "LDA" : 5,
   "BRA" : 6,
+  "BRZ" : 7,
   };
 }
 
