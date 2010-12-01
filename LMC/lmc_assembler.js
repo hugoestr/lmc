@@ -1,5 +1,10 @@
 function Lmc_Assembler(){
-
+  this.symbols = {
+  "HLT" : 0, 
+  "ADD" : 1, 
+  "SUB" : 2, 
+  "STA" : 3
+  };
 }
 
 Lmc_Assembler.prototype.Assemble = function(input){
@@ -19,10 +24,7 @@ Lmc_Assembler.prototype.parseLine = function(input ){
  var result = "";
  var tokens = input.split(" ");
  
- if (tokens[0] == "ADD")
-    result = "1" + tokens[1];
- else 
-   result = "2" + tokens[1];
+ result = this.symbols[tokens[0]] + tokens[1];
 
   return result;
 }

@@ -26,6 +26,13 @@ test("It should translate SUB correctly", function(){
   equals(output, "212", "It should be 212");
 });
 
+test("It should translate STA correctly", function(){
+  SetUp();
+  var line = "STA 34";
+  var output = a.Assemble(line);
+  equals(output, "334", "It should be 334");
+});
+
 test("It should handle well two lines of code", function(){
   SetUp();
   var line = "ADD 12\nSUB 14";
