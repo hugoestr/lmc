@@ -75,6 +75,12 @@ test("It should translate OUT correctly", function(){
   equals(output, "902", "It should be 902");
 });
 
+test("It should translate HLT correctly", function(){
+  SetUp();
+  var line = "HLT";
+  var output = a.Assemble(line);
+  equals(output, "000", "It should be 000");
+});
 
 test("It should handle well two lines of code", function(){
   SetUp();

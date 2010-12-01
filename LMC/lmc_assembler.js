@@ -1,6 +1,6 @@
 function Lmc_Assembler(){
   this.symbols = {
-  "HLT" : 0, 
+  "HLT" : "000", 
   "ADD" : 1, 
   "SUB" : 2, 
   "STA" : 3,
