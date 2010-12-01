@@ -10,6 +10,7 @@ function Lmc_Assembler(){
   "BRP" : 8,
   "INP" : 901,
   "OUT" : 902,
+  "DAT" : "",
   };
 }
 

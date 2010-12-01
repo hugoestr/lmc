@@ -95,3 +95,17 @@ test("It should ignore comments", function(){
   var output = a.Assemble(line);
   equals(output, "112\n214", "It should be 112[newline]214");
 });
+
+test("It should implement DAT", function(){
+  SetUp();
+  var line = "ADD 12\nSUB 14\nHLT\nDAT 321";
+  var output = a.Assemble(line);
+  equals(output, "112\n214\n000\n321", "It should be 112[nl]214[nl]000[nl]321");
+});
+
+test("It should implement DAT, where it occurs in the middle", function(){
+  SetUp();
+  var line = "ADD 12\nDAT 321\nSUB 14\nHLT";
+  var output = a.Assemble(line);
+  equals(output, "112\n321\n214\n000", "It should be 112[nl]321[nl]214[nl]000");
+});
