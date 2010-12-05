@@ -5,6 +5,7 @@ function Lmc(){
   this.accumulator = new Bytes(byte_size, base);
   this.counter = 0;
   this.is_on = false;
+  this.input_wait = false;
 
   this.input = new Bytes(byte_size, base);
   this.output = new Bytes(byte_size, base);
@@ -71,6 +72,10 @@ Lmc.prototype.INP = function() {
   this.accumulator.Set(this.input.value);
 }
 
+Lmc.prototype.Interrupt = function(){
+  this.is_on = false;
+}
+
 Lmc.prototype.OUT = function() {
   this.output.Set(this.accumulator.value);
 }
@@ -123,7 +128,7 @@ Lmc.prototype.Symbols = function(op, value) {
 
 Lmc.prototype.INOUT = function(value) {
   if (value == 1)
-    this.INP();
+    this.Interrupt();
   else
     this.OUT();
 }
@@ -139,12 +144,7 @@ Lmc.prototype.Execute = function() {
   this.Symbols(op, address);
 }
 
-Lmc.prototype.Run = function(){
-  this.is_on = true;
-  while (this.is_on){
-    this.Execute();
-  }
-}
+
 
 Lmc.prototype.Load = function(instructions) {
   var ops = instructions.split('\n');
@@ -153,3 +153,15 @@ Lmc.prototype.Load = function(instructions) {
       this.memory[i].Set(parseInt(ops[i]));
   }
 }
+
+Lmc.prototype.Run = function(){
+  this.is_on = true;
+  while (this.is_on){
+    if (this.input_wait == true){
+      this.INP();
+      this.input_wait == false;
+    }
+    this.Execute();
+  }
+}
+

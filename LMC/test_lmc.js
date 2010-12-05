@@ -195,3 +195,10 @@ test("It should load", function(){
   equals(l.memory[1].value, 236, "It should be ");
 });
 
+test("It should stop execution when INP", function() {
+  SetUp();
+  var instructions = "101\n236\n901\n000";
+  l.Load(instructions);
+  l.Run();
+  equals(l.counter, 3, "It should be at 1");
+});
