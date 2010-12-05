@@ -74,6 +74,7 @@ Lmc.prototype.INP = function() {
 
 Lmc.prototype.Interrupt = function(){
   this.is_on = false;
+  this.input_wait = true;
 }
 
 Lmc.prototype.OUT = function() {
@@ -159,7 +160,7 @@ Lmc.prototype.Run = function(){
   while (this.is_on){
     if (this.input_wait == true){
       this.INP();
-      this.input_wait == false;
+      this.input_wait = false;
     }
     this.Execute();
   }

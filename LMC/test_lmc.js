@@ -202,3 +202,13 @@ test("It should stop execution when INP", function() {
   l.Run();
   equals(l.counter, 3, "It should be at 1");
 });
+
+test("It should load value from INPUT", function() {
+  SetUp();
+  var instructions = "901\n103\n000\n200";
+  l.Load(instructions);
+  l.Run();
+  l.input.Set(20);
+  l.Run();
+  equals(l.accumulator.value, 220, "It should be at 220");
+});
