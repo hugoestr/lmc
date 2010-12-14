@@ -80,10 +80,13 @@
 <script type="text/javascript" src="../qunit/qunit.js"></script>
 <script type="text/javascript" src="../Byte/Byte.js"></script>
 <script type="text/javascript" src="../LMC/lmc.js"></script>
+<script type="text/javascript" src="../LMC/lmc_assembler.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function(){
-    c = new Lmc();
+      c = new Lmc();
+      a = new Lmc_Assembler();
+
     updateState(c);
     binding(c);
   });
@@ -116,6 +119,17 @@
       var instructions = $("#editor_machine").val();
       c.Load(instructions);
       updateState(c);
+    });
+
+    $("#translate").click(function(){
+        var input = $("#editor_assembly").val();
+        var output = a.Assemble(input);
+        $("#editor_machine").val(output);
+    });
+
+    $("#input").change(function(){
+      var value = parseInt($("#input").val(), 10);
+      c.input.Set(parseInt(value));    
     });
 
   }
