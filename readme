@@ -1,20 +1,7 @@
 Documentation
 
-This is an implementation of the Little Man Computer, Created by StuartMadnick in 1965, as described by its wikipedia entry.
+After getting the files, click on UI/machineui.html. There is documentation on how to us it there.
 
-How to use it:
-
-    * put your assembly in the Assembly texarea and click translate. That will output the machine code in the next Machine texarea of the Editor.
-    * Load the machine code into memory by clicking Load
-    * The memory should be loaded now. Sorry, you can't edit directly there. If you wish to edit, edit in Editor->Machine and click Load again.
-    * Click Run to run your program.
-    * If you prefer, you can step through it.
-    * Reset will put the counter back to 0, so that you can run your program again
-    * I doubt that anyone who would care about this program would need Stop to be explained. Still, Stop should stop your program.
-
-Support
-
-Hahahahaha, that is funny! Nah, seriously, if you find a bug, let me know, and I may fix it some day.
 License
 
 This is modified beerware software. Below the notice
