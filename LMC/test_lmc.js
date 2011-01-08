@@ -212,3 +212,5 @@ test("It should load value from INPUT", function() {
   l.Run();
   equals(l.accumulator.value, 220, "It should be at 220");
 });
+
+
